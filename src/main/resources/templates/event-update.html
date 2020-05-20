@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update event</title>
+</head>
+<body>
+<form action="#" th:action = "@{/event-update}" th:object = "${event}" method="post">
+    <label for="id">ID</label>
+    <input readonly type="number" th:field="*{id}" id="id" placeholder="ID">
+    <label for="event">Event</label>
+    <input type="text" th:field="*{name}" id="event" placeholder="Event">
+    <label for="type">Type</label>
+    <input type="text" th:field="*{type}" id="type" placeholder="Type">
+    <label for="date">Date</label>
+    <input type="text" th:field="*{date}" id="date" placeholder="Date">
+    <input type="submit" value="Update event">
+</form>
+</body>
+</html>
