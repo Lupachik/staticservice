@@ -19,8 +19,8 @@ public class Type {
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "type")
 //    private Set<Event> events;
 
-//    @Override
-//    public String toString() {
-//        return title;
-//    }
+    @Override
+    public String toString() {
+        return getTitle();
+    }
 }

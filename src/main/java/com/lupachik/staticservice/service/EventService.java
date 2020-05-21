@@ -36,12 +36,29 @@ public class EventService {
 
     public List<Event> findByType(String type){
         if (type != null && !type.isEmpty()) {
-//            return repository.findByTypeOrderByDateDescNameAsc(type);
             return repository.findAllByType(type);
         }else {
             return repository.findByOrderByDateDescNameAsc();
         }
     }
 
+    public Page<Event> findAllPage(Pageable pageable){
+        return repository.findAll(pageable);
+    }
 
+    public Page<Event> findAllPageFilter(String type,Pageable pageable){
+        if (type != null && !type.isEmpty()) {
+            return repository.findByType_Title(type, pageable);
+        }else {
+            return repository.findByOrderByDateDescNameAsc(pageable);
+        }
+    }
+
+    public List<Event> findByType_Title(String type){
+        if (type != null && !type.isEmpty()) {
+            return repository.findByType_Title(type);
+        }else {
+            return repository.findAll();
+        }
+    }
 }
